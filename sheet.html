@@ -2,13 +2,63 @@
 <html>
 
 <head>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style/style.css"></link>
 </head>
 
 <body>
-    <div id="mensaje">
-        {{mensaje}}
-    </div>
+
+    <section id="abilites">
+        <header class="clear">
+            <p>Ability Scores</p>
+        </header>
+        <table class="abil-content">
+            <thead>
+                <th>Score</th>
+                <th>Ability</th>
+                <th>Abil Mod</th>
+                <th>Mod + 1/2 LVL</th>
+            </thead>
+            <tr>
+                <td><input type="text" class="abil_input" v-model="strength"></td>
+                <td class="ability-tag">STR</td>
+                <td><input type="text" class="abil_input" v-model="strMod" disabled></td>
+                <td><input type="text" class="abil_input" v-model="strMod_lvl" disabled></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="abil_input" v-model="constitution"></td>
+                <td class="ability-tag">con</td>
+                <td><input type="text" class="abil_input" v-model="conMod" disabled></td>
+                <td><input type="text" class="abil_input" v-model="conMod_lvl" disabled></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="abil_input" v-model="dexterity"></td>
+                <td class="ability-tag">dex</td>
+                <td><input type="text" class="abil_input" v-model="dexMod" disabled></td>
+                <td><input type="text" class="abil_input" v-model="dexMod_lvl" disabled></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="abil_input" v-model="intelligence"></td>
+                <td class="ability-tag">int</td>
+                <td><input type="text" class="abil_input" v-model="intMod" disabled></td>
+                <td><input type="text" class="abil_input" v-model="intMod_lvl" disabled></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="abil_input" v-model="wisdom"></td>
+                <td class="ability-tag">wis</td>
+                <td><input type="text" class="abil_input" v-model="wisMod" disabled></td>
+                <td><input type="text" class="abil_input" v-model="wisMod_lvl" disabled></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="abil_input" v-model="charisma"></td>
+                <td class="ability-tag">cha</td>
+                <td><input type="text" class="abil_input" v-model="chaMod" disabled></td>
+                <td><input type="text" class="abil_input" v-model="chaMod_lvl" disabled></td>
+            </tr>
+        </table>
+
+    </section>
+
     <script data-main="app" src="lib/require.js"></script>
 </body>
 
