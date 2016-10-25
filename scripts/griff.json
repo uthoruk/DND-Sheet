@@ -1,0 +1,81 @@
+{
+    "player": {
+        "playerName": "panietoar",
+        "campaign": ""
+    },
+    "info": {
+        "level": 5,
+        "name": "Griff",
+        "chClass": "Fighter",
+        "paragon": null,
+        "epic": null,
+        "totalXp": 5500,
+        "race": "Dragonborn",
+        "size": "Medium",
+        "age": "42",
+        "gender": "male",
+        "height": "2.07 m",
+        "weight": "108 kg",
+        "alignment": "Unaligned",
+        "deity": "Kord",
+        "company": null
+    },
+    "initiative": {
+        "initBonus": 0
+    },
+    "abilities": {
+        "strength": 18,
+        "dexterity": 14,
+        "constitution": 16,
+        "intelligence": 12,
+        "wisdom": 14,
+        "charisma": 16
+    },
+    "hitPoints": {
+        "baseHP": 15,
+        "classHP": 6
+    },
+    "defenses": {
+        "acClassBonus": 0,
+        "acFeatBonus": 0,
+        "acEnhBonus": 0,
+        "acMiscAutoBonus": 0,
+        "acMiscBonus": 0
+    },
+    "skills": {
+        "acroSkillTrained": false,
+        "acroSkillMisc": 0,
+        "arcaSkillTrained": false,
+        "arcaSkillMisc": 0,
+        "athlSkillTrained": false,
+        "athlSkillMisc": 0,
+        "blufSkillTrained": false,
+        "blufSkillMisc": 0,
+        "diplSkillTrained": false,
+        "diplSkillMisc": 0,
+        "dungSkillTrained": false,
+        "dungSkillMisc": 0,
+        "enduSkillTrained": false,
+        "enduSkillMisc": 0,
+        "healSkillTrained": true,
+        "healSkillMisc": 0,
+        "histSkillTrained": false,
+        "histSkillMisc": 0,
+        "insiSkillTrained": false,
+        "insiSkillMisc": 0,
+        "intiSkillTrained": true,
+        "intiSkillMisc": 0,
+        "natuSkillTrained": false,
+        "natuSkillMisc": 0,
+        "percSkillTrained": false,
+        "percSkillMisc": 0,
+        "reliSkillTrained": false,
+        "reliSkillMisc": 0,
+        "steaSkillTrained": false,
+        "steaSkillMisc": 0,
+        "streSkillTrained": false,
+        "streSkillMisc": 0,
+        "thieSkillTrained": false,
+        "thieSkillMisc": 0
+    }
+}

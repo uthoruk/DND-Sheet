@@ -4,57 +4,151 @@ define([
 ], function($, Vue) {
     'use strict';
 
-    $.ajax({
-        method: "GET",
-        url: "http://mydndapi.azurewebsites.net/api/character/Griff/" //Change url in live
-    }).done(function(character) {
+    $.getJSON(
+        "scripts/griff.json",
+        function(character) {
 
-        var msg = new Vue({
-            el: "#abilites",
-            data: character,
-            computed: {
-                strMod: function() {
-                    return abilityModifier(this.strength);
-                },
-                strMod_lvl: function() {
-                    return abilityModifier(this.strength) + halfLevelModifier(this.level);
-                },
-                dexMod: function() {
-                    return abilityModifier(this.dexterity);
-                },
-                dexMod_lvl: function() {
-                    return abilityModifier(this.dexterity) + halfLevelModifier(this.level);
-                },
-                conMod: function() {
-                    return abilityModifier(this.constitution);
-                },
-                conMod_lvl: function() {
-                    return abilityModifier(this.constitution) + halfLevelModifier(this.level);
-                },
-                intMod: function() {
-                    return abilityModifier(this.intelligence);
-                },
-                intMod_lvl: function() {
-                    return abilityModifier(this.intelligence) + halfLevelModifier(this.level);
-                },
-                wisMod: function() {
-                    return abilityModifier(this.wisdom);
-                },
-                wisMod_lvl: function() {
-                    return abilityModifier(this.wisdom) + halfLevelModifier(this.level);
-                },
-                chaMod: function() {
-                    return abilityModifier(this.charisma);
-                },
-                chaMod_lvl: function() {
-                    return abilityModifier(this.charisma) + halfLevelModifier(this.level);
+            Vue.component('player-name', {
+                template: '<div id="name"><h2>{{playerName}}</div>',
+                data: function() {
+                    return character.player;
                 }
-            }
+            });
+
+            var header = new Vue({
+                el: "#sheet_header"
+            });
+
+            var characterInfo = new Vue({
+                el: "#character_info",
+                data: character.info
+            });
+
+            var abilities = new Vue({
+                el: "#abilites",
+                data: character.abilities,
+                computed: {
+                    strMod: function() {
+                        return abilityModifier(this.strength);
+                    },
+                    strMod_lvl: function() {
+                        return abilityModifier(this.strength) + halfLevelModifier(character.info.level);
+                    },
+                    dexMod: function() {
+                        return abilityModifier(this.dexterity);
+                    },
+                    dexMod_lvl: function() {
+                        return abilityModifier(this.dexterity) + halfLevelModifier(character.info.level);
+                    },
+                    conMod: function() {
+                        return abilityModifier(this.constitution);
+                    },
+                    conMod_lvl: function() {
+                        return abilityModifier(this.constitution) + halfLevelModifier(character.info.level);
+                    },
+                    intMod: function() {
+                        return abilityModifier(this.intelligence);
+                    },
+                    intMod_lvl: function() {
+                        return abilityModifier(this.intelligence) + halfLevelModifier(character.info.level);
+                    },
+                    wisMod: function() {
+                        return abilityModifier(this.wisdom);
+                    },
+                    wisMod_lvl: function() {
+                        return abilityModifier(this.wisdom) + halfLevelModifier(character.info.level);
+                    },
+                    chaMod: function() {
+                        return abilityModifier(this.charisma);
+                    },
+                    chaMod_lvl: function() {
+                        return abilityModifier(this.charisma) + halfLevelModifier(character.info.level);
+                    }
+                }
+            });
+
+            var initiative = new Vue({
+                el: "#initiative",
+                data: character.initiative,
+                computed: {
+                    initiative: function() {
+                        return abilities.dexMod_lvl + this.initBonus;
+                    }
+                }
+            });
+
+            var health = new Vue({
+                el: "#hit-points",
+                data: character.hitPoints,
+                computed: {
+                    maxHP: function() {
+                        return this.baseHP + character.abilities.constitution + ((character.info.level - 1) * this.classHP);
+                    },
+                    surgeValue: function() {
+                        return Math.floor((this.baseHP + character.abilities.constitution + ((character.info.level - 1) * this.classHP)) / 4);
+                    }
+                }
+            });
+
+            var skills = new Vue({
+                el: "#skills",
+                data: character.skills,
+                computed: {
+                    acroSkill: function() {
+                        return abilities.dexMod + halfLevelModifier(character.info.level) + (this.acroSkillTrained ? 5 : 0) + this.acroSkillMisc;
+                    },
+                    arcaSkill: function() {
+                        return abilities.intMod + halfLevelModifier(character.info.level) + (this.arcaSkillTrained ? 5 : 0) + this.acroSkillMisc;
+                    },
+                    athlSkill: function() {
+                        return abilities.strMod + halfLevelModifier(character.info.level) + (this.athlSkillTrained ? 5 : 0) + this.athlSkillMisc;
+                    },
+                    blufSkill: function() {
+                        return abilities.chaMod + halfLevelModifier(character.info.level) + (this.blufSkillTrained ? 5 : 0) + this.blufSkillMisc;
+                    },
+                    diplSkill: function() {
+                        return abilities.chaMod + halfLevelModifier(character.info.level) + (this.diplSkillTrained ? 5 : 0) + this.diplSkillMisc;
+                    },
+                    dungSkill: function() {
+                        return abilities.wisMod + halfLevelModifier(character.info.level) + (this.dungSkillTrained ? 5 : 0) + this.dungSkillMisc;
+                    },
+                    enduSkill: function() {
+                        return abilities.conMod + halfLevelModifier(character.info.level) + (this.enduSkillTrained ? 5 : 0) + this.enduSkillMisc;
+                    },
+                    healSkill: function() {
+                        return abilities.wisMod + halfLevelModifier(character.info.level) + (this.healSkillTrained ? 5 : 0) + this.healSkillMisc;
+                    },
+                    histSkill: function() {
+                        return abilities.intMod + halfLevelModifier(character.info.level) + (this.histSkillTrained ? 5 : 0) + this.histSkillMisc;
+                    },
+                    insiSkill: function() {
+                        return abilities.wisMod + halfLevelModifier(character.info.level) + (this.insiSkillTrained ? 5 : 0) + this.insiSkillMisc;
+                    },
+                    intiSkill: function() {
+                        return abilities.chaMod + halfLevelModifier(character.info.level) + (this.intiSkillTrained ? 5 : 0) + this.intiSkillMisc;
+                    },
+                    natuSkill: function() {
+                        return abilities.wisMod + halfLevelModifier(character.info.level) + (this.natuSkillTrained ? 5 : 0) + this.natuSkillMisc;
+                    },
+                    percSkill: function() {
+                        return abilities.wisMod + halfLevelModifier(character.info.level) + (this.percSkillTrained ? 5 : 0) + this.percSkillMisc;
+                    },
+                    reliSkill: function() {
+                        return abilities.intMod + halfLevelModifier(character.info.level) + (this.reliSkillTrained ? 5 : 0) + this.reliSkillMisc;
+                    },
+                    steaSkill: function() {
+                        return abilities.dexMod + halfLevelModifier(character.info.level) + (this.steaSkillTrained ? 5 : 0) + this.steaSkillMisc;
+                    },
+                    streSkill: function() {
+                        return abilities.chaMod + halfLevelModifier(character.info.level) + (this.streSkillTrained ? 5 : 0) + this.streSkillMisc;
+                    },
+                    thieSkill: function() {
+                        return abilities.dexMod + halfLevelModifier(character.info.level) + (this.thieSkillTrained ? 5 : 0) + this.thieSkillMisc;
+                    }
+                }
+            });
+
         });
-
-
-    });
-
 });
 
 function abilityModifier(abilityScore) {
