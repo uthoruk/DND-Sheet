@@ -21,7 +21,15 @@ define([
 
             var characterInfo = new Vue({
                 el: "#character_info",
-                data: character.info
+                data: character.info,
+                computed: {
+                    className: function() {
+                        return character.class ? character.class.name : "";
+                    },
+                    raceName: function() {
+                        return character.race ? character.race.name : "";
+                    }
+                }
             });
 
             var abilities = new Vue({
@@ -86,6 +94,9 @@ define([
                     },
                     surgeValue: function() {
                         return Math.floor((this.baseHP + character.abilities.constitution + ((character.info.level - 1) * this.classHP)) / 4);
+                    },
+                    maxHealingSurges: function() {
+                        return character.class ? character.class.surgesDay : 0;
                     }
                 }
             });
@@ -98,7 +109,7 @@ define([
                         return abilities.dexMod + halfLevelModifier(character.info.level) + (this.acroSkillTrained ? 5 : 0) + this.acroSkillMisc;
                     },
                     arcaSkill: function() {
-                        return abilities.intMod + halfLevelModifier(character.info.level) + (this.arcaSkillTrained ? 5 : 0) + this.acroSkillMisc;
+                        return abilities.intMod + halfLevelModifier(character.info.level) + (this.arcaSkillTrained ? 5 : 0) + this.arcaSkillMisc;
                     },
                     athlSkill: function() {
                         return abilities.strMod + halfLevelModifier(character.info.level) + (this.athlSkillTrained ? 5 : 0) + this.athlSkillMisc;
@@ -144,6 +155,31 @@ define([
                     },
                     thieSkill: function() {
                         return abilities.dexMod + halfLevelModifier(character.info.level) + (this.thieSkillTrained ? 5 : 0) + this.thieSkillMisc;
+                    }
+                }
+            });
+
+            var defenses = new Vue({
+                el: "#defenses",
+                data: character.defenses,
+                computed: {
+                    characterAC: function() {
+                        return 10 + halfLevelModifier(character.info.level) +
+                            (character.armor ? character.armor.acBonus + (character.armor.type === 'L' ? Math.max(abilities.dexMod, abilities.intMod) : 0) : 0) +
+                            this.acEnhancementBonus +
+                            this.acMiscBonus; //+ class + feat;
+                    },
+                    characterFortitude: function() {
+                        return 10 + halfLevelModifier(character.info.level) + Math.max(abilities.strMod, abilities.conMod) + this.fortitudeEnhancementBonus + this.fortitudeMiscBonus;
+                        // + class + feat
+                    },
+                    characterReflex: function() {
+                        return 10 + halfLevelModifier(character.info.level) + Math.max(abilities.dexMod, abilities.intMod) + this.reflexEnhancementBonus + this.reflexMiscBonus;
+                        // + class + feat
+                    },
+                    characterWill: function() {
+                        return 10 + halfLevelModifier(character.info.level) + Math.max(abilities.wisMod, abilities.chaMod) + this.willEnhancementBonus + this.willMiscBonus;
+                        // + class + feat
                     }
                 }
             });

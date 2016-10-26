@@ -2,24 +2,32 @@
 
 /*character header*/
 
-html,
-body {
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-}
-
 body {
     font-family: Arial, Helvetica, sans-serif;
-    margin: 5px;
+    margin-top: 5px;
 }
 
 header {
-    background-color: #000;
     color: white;
     text-transform: uppercase;
     margin-bottom: 5px;
+}
+
+.header-button {
+    background-color: black;
+    text-transform: uppercase;
+}
+
+button.header-button:hover {
+    color: white;
+}
+
+button.header-button:focus {
+    color: white;
+}
+
+.header-button:hover {
+    color: white;
 }
 
 header p {
@@ -37,6 +45,11 @@ label {
     font-size: 10px;
 }
 
+table {
+    margin: auto;
+    width: 75%;
+}
+
 thead th {
     color: black;
     font-size: 12px;
@@ -47,10 +60,6 @@ thead th {
 
 tbody {
     text-align: center;
-}
-
-td {
-    vertical-align: middle;
 }
 
 section {
@@ -70,8 +79,9 @@ header input.player_name {
     color: #000;
 }
 
-
-/* structure */
+.inline-span {
+    display: inline;
+}
 
 .column {
     display: inline-block;
@@ -82,7 +92,7 @@ header input.player_name {
 
 #character_stats {
     margin: auto;
-    width: 100%;
+    width: 95%;
 }
 
 #sheet_body {
@@ -107,9 +117,43 @@ header input.player_name {
     background-color: #000;
 }
 
+
+/* character info */
+
+.short-input {
+    width: 70px;
+}
+
+.underline {
+    padding: 5px;
+    border: none;
+    background-color: #EEE;
+    border-bottom: solid 2px #c9c9c9;
+    transition: border 0.3s;
+    width: 150px;
+}
+
+.chara-info-input {
+    height: 25px;
+    font-weight: bold;
+}
+
+.label-player-info {
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+.form-group1 {
+    display: inline-block;
+}
+
 #sheet_header img {
     margin-left: 20px;
     vertical-align: bottom;
+}
+
+#character_info {
+    width: 98%;
 }
 
 #character_info input {
@@ -126,83 +170,22 @@ header input.player_name {
 }
 
 #name {
-    float: right;
     margin: 18px;
-    vertical-align: bottom;
+    position: relative;
+    bottom: 20px;
+}
+
+.player-name {
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+#player-name1 {
+    font-size: 20px;
 }
 
 #name h2 {
     text-transform: none;
-    font-size: 18px;
-}
-
-.char_name {
-    width: 30%;
-}
-
-.char_level {
-    width: 45px;
-}
-
-.char_class {
-    width: 15%;
-}
-
-.char_paragon {
-    width: 15%;
-}
-
-.char_epic {
-    width: 15%;
-}
-
-.char_race {
-    width: 15%;
-}
-
-.char_size {
-    width: 5%;
-}
-
-.char_age {
-    width: 5%;
-}
-
-.char_gender {
-    width: 5%;
-}
-
-.char_height {
-    width: 5%;
-}
-
-.char_weight {
-    width: 5%;
-}
-
-.char_alignment {
-    width: 8%;
-}
-
-.char_company {
-    width: 20%;
-}
-
-.underline {
-    padding: 5px;
-    border: none;
-    background-color: #EEE;
-    border-bottom: solid 2px #c9c9c9;
-    transition: border 0.3s;
-    width: 150px;
-}
-
-.underline:focus {
-    border-bottom: solid 2px #969696;
-}
-
-.character_name {
-    width: 200px;
     font-size: 18px;
 }
 
@@ -226,8 +209,7 @@ header input.player_name {
     font-size: 16px;
     width: 35px;
     display: inline-block;
-    float: left;
-    margin: 10px 10px 10px 10px;
+    border: 1px solid black;
 }
 
 .initiative-tab {
@@ -249,13 +231,16 @@ header input.player_name {
 .abil_input {
     width: 40px;
     font-size: 20px;
+    border: 1px solid black;
 }
 
 .ability-tag {
     background-color: black;
-    font-size: 28px;
+    font-size: 20px;
     color: white;
-    width: 80px;
+    width: 60px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 
@@ -266,6 +251,19 @@ header input.player_name {
     border: 1px solid black;
     width: 60px;
     height: 30px;
+}
+
+.hit-points-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: black;
+}
+
+.inline {
+    display: inline-block;
+    width: 120px;
+    white-space: nowrap;
+    border: 1px solid lightslategray;
     text-align: center;
 }
 
@@ -291,12 +289,6 @@ header input.player_name {
 
 /* skills */
 
-.skill-input-auto {
-    height: 20px;
-    text-align: center;
-    background-color: #D3D3D3;
-}
-
 span {
     display: block;
 }
@@ -318,16 +310,35 @@ span {
 .trnd {
     height: 20px;
     text-align: center;
+    width: 30px;
     background-color: #D3D3D3;
 }
 
 .skill-input {
-    width: 30%;
+    width: 30px;
     border: 1px solid black;
 }
 
 
 /* defenses */
+
+.defense-total,
+.defense-table,
+.speed-total,
+.speed-table {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.defense-table,
+speed-table {
+    width: auto;
+}
+
+.def-row {
+    width: 100%;
+    text-align: center;
+}
 
 .def-input {
     border-radius: 100%;
@@ -342,11 +353,12 @@ span {
     vertical-align: middle;
 }
 
-.input-def-auto {
+.input-auto {
     height: 30px;
     text-align: center;
     width: 40px;
     font-size: 16px;
+    border: 1px solid black;
 }
 
 .def-for {
@@ -366,17 +378,10 @@ span {
 
 .def-tag {
     background-color: black;
-    text-align: center;
     color: white;
     font-weight: bold;
     font-size: 25px;
-    width: 60px;
     z-index: -1;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.def-tab {
     display: inline-block;
     vertical-align: middle;
 }
@@ -389,21 +394,20 @@ span {
     width: 100%;
 }
 
-.feature-div {}
-
 
 /*speed*/
 
 .speed-tag {
     background-color: black;
-    text-align: center;
     color: white;
     font-weight: bold;
     font-size: 25px;
-    width: 90px;
     z-index: -1;
     display: inline-block;
-    vertical-align: middle;
+}
+
+.speed-table {
+    width: auto;
 }
 
 .speed {
@@ -414,33 +418,20 @@ span {
     font-size: 20px;
     border: 2px solid black;
     background-color: white;
-    display: inline-block;
-    vertical-align: middle;
 }
 
 .speed-tab {
-    height: 25px;
-    margin: 0px 5px 5px 5px;
+    height: 30px;
     text-align: center;
     width: 40px;
     font-size: 16px;
-    vertical-align: middle;
+    border: 1px solid black;
 }
 
-.speed-table {
-    vertical-align: middle;
+.movement {
     display: inline-block;
-}
-
-.special-movement {
-    position: relative;
-    left: 370px;
-    bottom: 139px;
-}
-
-.movement-table {
-    height: 50px;
-    width: 200px;
+    width: 100%;
+    text-align: center;
 }
 
 
@@ -453,7 +444,7 @@ span {
 
 /*-*-*-*-atack workspace-*-*-*-*/
 
-div a {
+div button {
     display: inline-block;
 }
 
@@ -473,6 +464,44 @@ a:active {
     text-decoration: none;
 }
 
+.label-style {
+    font-size: 15px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.atk-inline {
+    display: inline-block;
+}
+
+.atk-inp-modal {
+    height: 50px;
+    font-size: 20px;
+    width: 70px;
+    border: none;
+}
+
+
+/*-*-*-*-senses-*-*-*-*/
+
+.sense-tbody {
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.sense-tag {
+    background-color: black;
+    color: white;
+    white-space: nowrap;
+}
+
+
+/*-*-*-*-feats-*-*-*-*/
+
+.feat-margin {
+    margin-top: 10px;
+}
+
 
 /*-*-*-*-*-*-*@media-*-*-*-*/
 
@@ -480,13 +509,13 @@ a:active {
     .no-show-480px {
         display: none;
     }
-    .bonus-480px {
-        /* width: ;*/
-    }
     .width-480px {
         width: 60%;
     }
     .skill-input {
         width: 40%;
+    }
+    .section-tag {
+        display: none;
     }
 }

@@ -3,6 +3,9 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Sheet</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style/style.css"></link>
 </head>
 
@@ -16,431 +19,614 @@
 
         <section id="character_info">
             <div>
-                <div class="info_field char_name">
-                    <input type="text" id="char_name" class="underline" v-model="name">
-                    <label for="char_name">Character name</label>
+                <div class="form-group form-group1">
+                    <input type="text" id="char_name" class="chara-info-input underline" v-model="name">
+                    <label for="char_name" class="label-player-info">Character name</label>
                 </div>
-                <div class="info_field char_level">
-                    <input type="text" id="char_level" class="init_input" v-model="level">
-                    <label for="char_name">Level</label>
+                <div class="form-group form-group1">
+                    <input type="text" id="char_level" class="short-input chara-info-input" v-model="level">
+                    <label for="char_name" class="label-player-info">Level</label>
                 </div>
-                <div class="info_field char_class">
-                    <input type="text" id="char_class" class="underline" v-model="chClass">
-                    <label for="char_name">Class</label>
+                <div class="form-group form-group1">
+                    <input type="text" id="char_class" class="chara-info-input underline" v-model="className">
+                    <label for="char_name" class="label-player-info">Class</label>
                 </div>
-                <div class="info_field char_paragon">
-                    <input type="text" id="char_paragon" class="underline" v-model="paragon">
-                    <label for="char_name">Paragon path</label>
+                <div class="form-group form-group1">
+                    <input type="text" id="char_paragon" class="chara-info-input underline" v-model="paragon">
+                    <label for="char_name" class="label-player-info">Paragon path</label>
                 </div>
-                <div class="info_field char_epic">
-                    <input type="text" id="char_epic" class="underline" v-model="epic">
-                    <label for="char_name">Epic destiny</label>
+                <div class="form-group form-group1">
+                    <input type="text" id="char_epic" class="chara-info-input underline" v-model="epic">
+                    <label for="char_name" class="label-player-info">Epic destiny</label>
                 </div>
-                <div class="info_field char_xp">
-                    <input type="text" id="char_xp" class="init_input" v-model="totalXp">
-                    <label for="char_name">Total xp</label>
+                <div class="form-group form-group1">
+                    <input type="text" id="char_xp" class="chara-info-input" v-model="totalXp">
+                    <label for="char_name" class="label-player-info">Total xp</label>
                 </div>
-            </div>
-            <div style="margin-top: 10px;">
-                <div class="info_field char_race">
-                    <select id="char_race" class="underline" v-model="race">
+
+                <div class="form-group form-group1">
+                    <select id="char_race" v-model="raceName" class="underline">
 						<option value="">Seleccionar</option>
 					</select>
-                    <label for="char_name">Race</label>
+                    <label for="char_name" class="label-player-info">Race</label>
                 </div>
-                <div class="info_field char_size">
-                    <input type="text" id="char_race" class="underline" v-model="size">
-                    <label for="char_name">Size</label>
+                <div class="form-group form-group1">
+                    <input type="text" id="char_race" class="short-input chara-info-input underline" v-model="size">
+                    <label for="char_name" class="label-player-info">Size</label>
                 </div>
-                <div class="info_field char_age">
-                    <input type="text" id="char_race" class="underline" v-model="age">
-                    <label for="char_name">Age</label>
+                <div class="form-group form-group1">
+                    <input type="text" id="char_race" class="short-input chara-info-input underline" v-model="age">
+                    <label for="char_name" class="label-player-info">Age</label>
                 </div>
-                <div class="info_field char_gender">
-                    <input type="text" id="char_race" class="underline" v-model="gender">
-                    <label for="char_name">Gender</label>
+                <div class="form-group form-group1">
+                    <input type="text" id="char_race" class="chara-info-input short-input underline" v-model="gender">
+                    <label for="char_name" class="label-player-info">Gender</label>
                 </div>
-                <div class="info_field char_height">
-                    <input type="text" id="char_race" class="underline" v-model="height">
-                    <label for="char_name">Height</label>
+                <div class="form-group form-group1">
+                    <input type="text" id="char_race" class="chara-info-input short-input underline" v-model="height">
+                    <label for="char_name" class="label-player-info">Height</label>
                 </div>
-                <div class="info_field char_weight">
-                    <input type="text" id="char_race" class="underline" v-model="weight">
-                    <label for="char_name">Weight</label>
+                <div class="form-group form-group1">
+                    <input type="text" id="char_race" class="chara-info-input short-input underline" v-model="weight">
+                    <label for="char_name" class="label-player-info">Weight</label>
                 </div>
-                <div class="info_field char_alignment">
-                    <input type="text" id="char_race" class="underline" v-model="alignment">
-                    <label for="char_name">Alignment</label>
+                <div class="form-group form-group1">
+                    <input type="text" id="char_race" class="chara-info-input underline" v-model="alignment">
+                    <label for="char_name" class="label-player-info">Alignment</label>
                 </div>
-                <div class="info_field char_deity">
-                    <input type="text" id="char_race" class="underline" v-model="deity">
-                    <label for="char_name">Deity</label>
+                <div class="form-group form-group1">
+                    <input type="text" id="char_race" class="chara-info-input underline" v-model="deity">
+                    <label for="char_name" class="label-player-info">Deity</label>
                 </div>
-                <div class="info_field char_company">
-                    <input type="text" id="char_race" class="underline" v-model="company">
-                    <label for="char_name">Adventuring company or Affiliations</label>
+                <div class="form-group form-group1">
+                    <input type="text" id="char_race" class="chara-info-input underline" v-model="company">
+                    <label for="char_name" class="label-player-info">Adventuring company or Affiliations</label>
                 </div>
             </div>
         </section>
 
-        <div id="character_stats">
-            <!-- Columna IZQ -->
-            <div class="row">
+        <!-- Columna IZQ -->
 
-                <div class="col-sm-4">
+        <div class="col-sm-4">
 
-                    <section id="initiative">
-                        <header>
-                            <p>Initiative</p>
-                        </header>
-                        <div class="initiative-tab">
-                            <table class="ini-tab">
+            <section id="initiative">
+                <header>
+                    <button data-toggle="collapse" data-target="#initiative-content" class="header-button btn btn-block" type="button"><p>Initiative</p></button>
+                </header>
+                <div id="initiative-content" class="collapse in">
+                    <table class="table-condensed">
+                        <thead>
+                            <th class="init-content">score</th>
+                            <th class="init-content">misc</th>
+                        </thead>
+                        <tr class="ini-tab">
+                            <td><input type="text" class="init_input" v-model="initiative" disabled></td>
+                            <td><input type="number" class="init_input" v-model="initBonus"></td>
+                    </table>
+                </div>
+            </section>
+
+            <section id="abilites">
+                <header class="clear">
+                    <button data-toggle="collapse" data-target="#ability-scores-content" class="header-button btn btn-block"><p>Ability Scores</p></button>
+                </header>
+                <div id="ability-scores-content" class="collapse in">
+                    <table class="table-condensed">
+                        <thead>
+                            <th>Score</th>
+                            <th>Ability</th>
+                            <th>Abil Mod</th>
+                            <th>Mod + 1/2 LVL</th>
+                        </thead>
+                        <tr>
+                            <td><input type="text" class="abil_input" v-model="strength"></td>
+                            <td class="ability-tag well">STR</td>
+                            <td><input type="text" class="abil_input" v-model="strMod" disabled></td>
+                            <td><input type="text" class="abil_input" v-model="strMod_lvl" disabled></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="abil_input" v-model="constitution"></td>
+                            <td class="ability-tag well">con</td>
+                            <td><input type="text" class="abil_input" v-model="conMod" disabled></td>
+                            <td><input type="text" class="abil_input" v-model="conMod_lvl" disabled></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="abil_input" v-model="dexterity"></td>
+                            <td class="ability-tag well">dex</td>
+                            <td><input type="text" class="abil_input" v-model="dexMod" disabled></td>
+                            <td><input type="text" class="abil_input" v-model="dexMod_lvl" disabled></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="abil_input" v-model="intelligence"></td>
+                            <td class="ability-tag well">int</td>
+                            <td><input type="text" class="abil_input" v-model="intMod" disabled></td>
+                            <td><input type="text" class="abil_input" v-model="intMod_lvl" disabled></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="abil_input" v-model="wisdom"></td>
+                            <td class="ability-tag well">wis</td>
+                            <td><input type="text" class="abil_input" v-model="wisMod" disabled></td>
+                            <td><input type="text" class="abil_input" v-model="wisMod_lvl" disabled></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="abil_input" v-model="charisma"></td>
+                            <td class="ability-tag well">cha</td>
+                            <td><input type="text" class="abil_input" v-model="chaMod" disabled></td>
+                            <td><input type="text" class="abil_input" v-model="chaMod_lvl" disabled></td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <section id="hit-points">
+                <header>
+                    <button data-toggle="collapse" data-target="#hit-points-content" class="header-button btn btn-block"><p>Hit points</p></button>
+                </header>
+                <div id="hit-points-content" class="collapse in">
+                    <div class="inline well-sm">
+                        <label for="#max-hp" class="hit-points-label">Max HP</label>
+                        <input id="max-hp" type="text" class="hp_input main_score" v-model="maxHP" disabled>
+                    </div>
+                    <div class="inline well-sm">
+                        <label for="#current-hp" class="hit-points-label">Current HP</label>
+                        <input id="current-hp" type="number" class="hp_input" v-model="currentHP">
+                    </div>
+                    <div class="inline well-sm">
+                        <label for="#temporary-hp" class="hit-points-label">Temporary HP</label>
+                        <input id="temporary-hp" type="number" class="hp_input" v-model="temporaryHP">
+                    </div>
+                    <div class="inline well-sm">
+                        <label for="#surge-value" class="hit-points-label">Surge value</label>
+                        <input id="surge-value" type="text" class="hp_input" disabled v-model="surgeValue">
+                    </div>
+                    <div class="inline well-sm">
+                        <label for="#surge-max" class="hit-points-label">Surges (max: <span class="inline-span">{{maxHealingSurges}}</span>)</label>
+                        <input id="surge-max" type="number" class="hp_input" v-model="currentHealingSurges">
+                    </div>
+            </section>
+
+            <section id="skills">
+                <header>
+                    <button data-toggle="collapse" data-target="#skills-content" class="header-button btn btn-block"><p>Skills</p></button>
+                </header>
+                <div id="skills-content" class="collapse in table-responsive">
+                    <table class="table-condensed">
+                        <thead>
+                            <th data-toggle="popover" data-trigger="hover" title="Based on" data-content="1/2 Lv + Abil Mod + Trnd + Armor Penalty + Misc">bonus</th>
+                            <th>skill name</th>
+                            <th>trnd<span>(+5)</span></th>
+                            <th>misc</th>
+                        </thead>
+                        <tr>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="text" class="skill-input" disabled v-model="acroSkill"></div>
+                            </td>
+                            <td>
+                                <div class="skill-name">Acrobatics</div>
+                            </td>
+                            <td>
+                                <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="acroSkillTrained"></div>
+                            </td>
+
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="number" class="skill-input" v-model="acroSkillMisc"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="text" class="skill-input" disabled v-model="arcaSkill"></div>
+                            </td>
+                            <td>
+                                <div class="skill-name">Arcana</div>
+                            </td>
+                            <td>
+                                <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="arcaSkillTrained"></div>
+                            </td>
+                            <td>
+                                <div class="skill-input-auto"><input type="number" class="skill-input" v-model="arcaSkillMisc"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="athlSkill"></div>
+                            </td>
+                            <td>
+                                <div class="skill-name">Athletics</div>
+                            </td>
+                            <td>
+                                <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="athlSkillTrained"></div>
+                            </td>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="number" class="skill-input" v-model="athlSkillMisc"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="blufSkill"></div>
+                            </td>
+                            <td>
+                                <div class="skill-name">Bluff</div>
+                            </td>
+                            <td>
+                                <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="blufSkillTrained"></div>
+                            </td>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="number" class="skill-input" v-model="blufSkillMisc"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="diplSkill"></div>
+                            </td>
+                            <td>
+                                <div class="skill-name">Diplomacy</div>
+                            </td>
+                            <td>
+                                <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="diplSkillTrained"></div>
+                            </td>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="number" class="skill-input" v-model="diplSkillMisc"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="dungSkill"></div>
+                            </td>
+                            <td>
+                                <div class="skill-name">Dungeoneering</div>
+                            </td>
+
+                            <td>
+                                <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="dungSkillTrained"></div>
+                            </td>
+
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="number" class="skill-input" v-model="dungSkillMisc"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="enduSkill"></div>
+                            </td>
+                            <td>
+                                <div class="skill-name">Endurance</div>
+                            </td>
+                            <td>
+                                <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="enduSkillTrained"></div>
+                            </td>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="number" class="skill-input" v-model="enduSkillMisc"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="healSkill"></div>
+                            </td>
+                            <td>
+                                <div class="skill-name">Heal</div>
+                            </td>
+                            <td>
+                                <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="healSkillTrained"></div>
+                            </td>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="number" class="skill-input" v-model="healSkillMisc"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="histSkill"></div>
+                            </td>
+                            <td>
+                                <div class="skill-name">history</div>
+                            </td>
+                            <td>
+                                <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="histSkillTrained"></div>
+                            </td>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="number" class="skill-input" v-model="histSkillMisc"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="insiSkill"></div>
+                            </td>
+                            <td>
+                                <div class="skill-name">insight</div>
+                            </td>
+                            <td>
+                                <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="insiSkillTrained"></div>
+                            </td>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="number" class="skill-input" v-model="insiSkillMisc"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="intiSkill"></div>
+                            </td>
+                            <td>
+                                <div class="skill-name">intimidate</div>
+                            </td>
+                            <td>
+                                <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="intiSkillTrained"></div>
+                            </td>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="number" class="skill-input" v-model="intiSkillMisc"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="natuSkill"></div>
+                            </td>
+                            <td>
+                                <div class="skill-name">nature</div>
+                            </td>
+                            <td>
+                                <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="natuSkillTrained"></div>
+                            </td>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="number" class="skill-input" v-model="natuSkillMisc"></div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="percSkill"></div>
+                            </td>
+                            <td>
+                                <div class="skill-name">perception</div>
+                            </td>
+                            <td>
+                                <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="percSkillTrained"></div>
+                            </td>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="number" class="skill-input" v-model="percSkillMisc"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="reliSkill"></div>
+                            </td>
+                            <td>
+                                <div class="skill-name">religion</div>
+                            </td>
+                            <td>
+                                <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="reliSkillTrained"></div>
+                            </td>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="number" class="skill-input" v-model="reliSkillMisc"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="steaSkill"></div>
+                            </td>
+                            <td>
+                                <div class="skill-name">Stealth</div>
+                            </td>
+                            <td>
+                                <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="steaSkillTrained"></div>
+                            </td>
+
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="number" class="skill-input" v-model="steaSkillMisc"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="streSkill"></div>
+                            </td>
+                            <td>
+                                <div class="skill-name">streetwise</div>
+                            </td>
+                            <td>
+                                <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="streSkillTrained"></div>
+                            </td>
+
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="number" class="skill-input" v-model="streSkillMisc"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="thieSkill"></div>
+                            </td>
+                            <td>
+                                <div class="skill-name">thievery</div>
+                            </td>
+                            <td>
+                                <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="thieSkillTrained"></div>
+                            </td>
+                            <td class="bonus-480px">
+                                <div class="skill-input-auto"><input type="number" class="skill-input" v-model="thieSkillMisc"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            </div>
+
+
+            <!-- Columna CENTRO -->
+            <div class="col-sm-4">
+
+                <section id="defenses">
+                    <header>
+                        <button data-toggle="collapse" data-target="#defenses-content" class="header-button btn btn-block"><p>Defenses</p></button>
+                    </header>
+                    <div id="defenses-content" class="collapse in table-responsive">
+                        <div class="def-ac def-row">
+
+                            <div class="defense-total">
+                                <input type="text" class="def-input main_score" v-model="characterAC" disabled>
+                                <div class="def-tag well-sm" data-toggle="popover" data-trigger="hover" title="Based on" data-content="1/2 Lv + Armor/Ability + Class + Feat + Enh + Misc">AC</div>
+                            </div>
+
+                            <table class="table-condensed defense-table">
                                 <thead>
-                                    <th class="init-content">score</th>
-                                    <th class="init-content">misc</th>
+                                    <th>enh</th>
+                                    <th>misc</th>
                                 </thead>
-                                <tr class="ini-tab">
-                                    <td><input type="text" class="init_input" v-model="initiative" disabled></td>
-                                    <td><input type="number" min="-20" max="20" class="init_input" v-model="initBonus"></td>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="number" class="input-def-auto" v-model="acEnhancementBonus"></td>
+                                        <td><input type="number" class="input-def-auto" v-model="acMiscBonus"></td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
-                    </section>
 
-                    <section id="abilites">
-                        <header class="clear">
-                            <p>Ability Scores</p>
-                        </header>
-                        <table class="abil-content">
-                            <thead>
-                                <th>Score</th>
-                                <th>Ability</th>
-                                <th>Abil Mod</th>
-                                <th>Mod + 1/2 LVL</th>
-                            </thead>
-                            <tr>
-                                <td><input type="text" class="abil_input" v-model="strength"></td>
-                                <td class="ability-tag">STR</td>
-                                <td><input type="text" class="abil_input" v-model="strMod" disabled></td>
-                                <td><input type="text" class="abil_input" v-model="strMod_lvl" disabled></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" class="abil_input" v-model="constitution"></td>
-                                <td class="ability-tag">con</td>
-                                <td><input type="text" class="abil_input" v-model="conMod" disabled></td>
-                                <td><input type="text" class="abil_input" v-model="conMod_lvl" disabled></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" class="abil_input" v-model="dexterity"></td>
-                                <td class="ability-tag">dex</td>
-                                <td><input type="text" class="abil_input" v-model="dexMod" disabled></td>
-                                <td><input type="text" class="abil_input" v-model="dexMod_lvl" disabled></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" class="abil_input" v-model="intelligence"></td>
-                                <td class="ability-tag">int</td>
-                                <td><input type="text" class="abil_input" v-model="intMod" disabled></td>
-                                <td><input type="text" class="abil_input" v-model="intMod_lvl" disabled></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" class="abil_input" v-model="wisdom"></td>
-                                <td class="ability-tag">wis</td>
-                                <td><input type="text" class="abil_input" v-model="wisMod" disabled></td>
-                                <td><input type="text" class="abil_input" v-model="wisMod_lvl" disabled></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" class="abil_input" v-model="charisma"></td>
-                                <td class="ability-tag">cha</td>
-                                <td><input type="text" class="abil_input" v-model="chaMod" disabled></td>
-                                <td><input type="text" class="abil_input" v-model="chaMod_lvl" disabled></td>
-                            </tr>
-                        </table>
-                    </section>
+                        <div class="def-for def-row">
+                            <div class="defense-total">
+                                <input type="text" class="def-input main_score" v-model="characterFortitude" disabled>
+                                <div class="def-tag well-sm" data-toggle="popover" data-trigger="hover" title="Based on" data-content="1/2 Lv + Abil + Class + Feat + Enh + Misc">FOR</div>
+                            </div>
+                            <table class="table-condensed defense-table">
+                                <thead>
+                                    <th>enh</th>
+                                    <th>misc</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="number" class="input-def-auto" v-model="fortitudeEnhancementBonus"></td>
+                                        <td><input type="number" class="input-def-auto" v-model="fortitudeMiscBonus"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="def-ref def-row">
+                            <div class="defense-total">
+                                <input type="text" class="def-input main_score" v-model="characterReflex" disabled>
+                                <div class="def-tag well-sm" data-toggle="popover" data-trigger="hover" title="Based on" data-content="1/2 Lv + Abil + Class + Feat + Enh + Misc">REF</div>
+                            </div>
+                            <table class="table-condensed defense-table">
+                                <thead>
+                                    <th>enh</th>
+                                    <th>misc</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="number" class="input-def-auto" v-model="reflexEnhancementBonus"></td>
+                                        <td><input type="number" class="input-def-auto" v-model="reflexMiscBonus"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="def-wil def-row">
+                            <div class="defense-total">
+                                <input type="text" class="def-input main_score" v-model="characterWill" disabled>
+                                <div class="def-tag well-sm" data-toggle="popover" data-trigger="hover" title="Based on" data-content="1/2 Lv + Abil + Class + Feat + Enh + Misc">WIL</div>
+                            </div>
+                            <table class="table-condensed defense-table">
+                                <thead>
+                                    <th>enh</th>
+                                    <th>misc</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="number" class="input-def-auto" v-model="willEnhancementBonus"></td>
+                                        <td><input type="number" class="input-def-auto" v-model="willMiscBonus"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
 
-                    <section id="hit-points">
-                        <header>
-                            <p>Hit points</p>
-                        </header>
-                        <table class="abil-content">
-                            <thead>
-                                <th>Max HP</th>
-                                <th>Current HP</th>
-                                <th>Temporary HP</th>
-                                <th>Surge value</th>
-                                <th>Current Hs</th>
-                            </thead>
-                            <tr>
-                                <td><input type="text" class="hp_input main_score" v-model="maxHP" disabled></td>
-                                <td><input type="number" class="hp_input"></td>
-                                <td><input type="number" class="hp_input"></td>
-                                <td><input type="text" class="hp_input" disabled v-model="surgeValue"></td>
-                                <td><input type="number" class="hp_input"></td>
-                            </tr>
-                        </table>
-                    </section>
+                <section class="feature-div">
+                    <header>
+                        <p>race features</p>
+                    </header>
+                    <div>
+                        <input type="text" class="race-class-features" disabled>
+                    </div>
+                </section>
 
-                    <section id="skills">
-                        <header>
-                            <p>Skills</p>
-                        </header>
-                        <table class="width-480px">
-                            <thead>
-                                <th>bonus</th>
-                                <th>skill name</th>
-                                <th>trnd<span>(+5)</span></th>
-                                <th>misc</th>
-                            </thead>
-                            <tr>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="text" class="skill-input" disabled v-model="acroSkill"></div>
-                                </td>
-                                <td>
-                                    <div class="skill-name">Acrobatics</div>
-                                </td>
-                                <td>
-                                    <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="acroSkillTrained"></div>
-                                </td>
+                <section class="feature-div">
+                    <header>
+                        <p>CLASS / PATH / DESTINY FEATURES</p>
+                    </header>
+                    <div>
+                        <input type="text" class="race-class-features" disabled>
+                    </div>
+                </section>
 
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="number" class="skill-input" v-model="acroSkillMisc"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="text" class="skill-input" disabled v-model="arcaSkill"></div>
-                                </td>
-                                <td>
-                                    <div class="skill-name">Arcana</div>
-                                </td>
-                                <td>
-                                    <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="arcaSkillTrained"></div>
-                                </td>
-                                <td>
-                                    <div class="skill-input-auto"><input type="number" class="skill-input" v-model="arcaSkillMisc"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="athlSkill"></div>
-                                </td>
-                                <td>
-                                    <div class="skill-name">Athletics</div>
-                                </td>
-                                <td>
-                                    <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="athlSkillTrained"></div>
-                                </td>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="number" class="skill-input" v-model="athlSkillMisc"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="blufSkill"></div>
-                                </td>
-                                <td>
-                                    <div class="skill-name">Bluff</div>
-                                </td>
-                                <td>
-                                    <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="blufSkillTrained"></div>
-                                </td>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="number" class="skill-input" v-model="blufSkillMisc"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="diplSkill"></div>
-                                </td>
-                                <td>
-                                    <div class="skill-name">Diplomacy</div>
-                                </td>
-                                <td>
-                                    <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="diplSkillTrained"></div>
-                                </td>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="number" class="skill-input" v-model="diplSkillMisc"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="dungSkill"></div>
-                                </td>
-                                <td>
-                                    <div class="skill-name">Dungeoneering</div>
-                                </td>
-
-                                <td>
-                                    <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="dungSkillTrained"></div>
-                                </td>
-
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="number" class="skill-input" v-model="dungSkillMisc"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="enduSkill"></div>
-                                </td>
-                                <td>
-                                    <div class="skill-name">Endurance</div>
-                                </td>
-                                <td>
-                                    <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="enduSkillTrained"></div>
-                                </td>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="number" class="skill-input" v-model="enduSkillMisc"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="healSkill"></div>
-                                </td>
-                                <td>
-                                    <div class="skill-name">Heal</div>
-                                </td>
-                                <td>
-                                    <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="healSkillTrained"></div>
-                                </td>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="number" class="skill-input" v-model="healSkillMisc"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="histSkill"></div>
-                                </td>
-                                <td>
-                                    <div class="skill-name">history</div>
-                                </td>
-                                <td>
-                                    <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="histSkillTrained"></div>
-                                </td>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="number" class="skill-input" v-model="histSkillMisc"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="insiSkill"></div>
-                                </td>
-                                <td>
-                                    <div class="skill-name">insight</div>
-                                </td>
-                                <td>
-                                    <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="insiSkillTrained"></div>
-                                </td>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="number" class="skill-input" v-model="insiSkillMisc"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="intiSkill"></div>
-                                </td>
-                                <td>
-                                    <div class="skill-name">intimidate</div>
-                                </td>
-                                <td>
-                                    <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="intiSkillTrained"></div>
-                                </td>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="number" class="skill-input" v-model="intiSkillMisc"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="natuSkill"></div>
-                                </td>
-                                <td>
-                                    <div class="skill-name">nature</div>
-                                </td>
-                                <td>
-                                    <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="natuSkillTrained"></div>
-                                </td>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="number" class="skill-input" v-model="natuSkillMisc"></div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="percSkill"></div>
-                                </td>
-                                <td>
-                                    <div class="skill-name">perception</div>
-                                </td>
-                                <td>
-                                    <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="percSkillTrained"></div>
-                                </td>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="number" class="skill-input" v-model="percSkillMisc"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="reliSkill"></div>
-                                </td>
-                                <td>
-                                    <div class="skill-name">religion</div>
-                                </td>
-                                <td>
-                                    <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="reliSkillTrained"></div>
-                                </td>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="number" class="skill-input" v-model="reliSkillMisc"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="steaSkill"></div>
-                                </td>
-                                <td>
-                                    <div class="skill-name">Stealth</div>
-                                </td>
-                                <td>
-                                    <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="steaSkillTrained"></div>
-                                </td>
-
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="number" class="skill-input" v-model="steaSkillMisc"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="streSkill"></div>
-                                </td>
-                                <td>
-                                    <div class="skill-name">streetwise</div>
-                                </td>
-                                <td>
-                                    <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="streSkillTrained"></div>
-                                </td>
-
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="number" class="skill-input" v-model="streSkillMisc"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="thieSkill"></div>
-                                </td>
-                                <td>
-                                    <div class="skill-name">thievery</div>
-                                </td>
-                                <td>
-                                    <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="thieSkillTrained"></div>
-                                </td>
-                                <td class="bonus-480px">
-                                    <div class="skill-input-auto"><input type="number" class="skill-input" v-model="thieSkillMisc"></div>
-                                </td>
-                            </tr>
-                        </table>
-                    </section>
-
-                </div>
             </div>
+
+            <!-- Columna DER -->
+
+            <div class="col-sm-4">
+
+                <section id="movement">
+                    <header>
+                        <p>Movement</p>
+                    </header>
+                    <div>
+                        <input type="text" class="speed" disabled v-model="speed">
+                        <div class="speed-tag">Speed</div>
+
+                        <div class="speed-table">
+                            <table>
+                                <thead>
+                                    <th>Base</span>
+                                    </th>
+                                    <th>armor</th>
+                                    <th>item</th>
+                                    <th>misc</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="text" class="speed-tab" disabled v-model="classSpeed"></td>
+                                        <td><input type="text" class="speed-tab" disabled></td>
+                                        <td><input type="text" class="speed-tab" disabled></td>
+                                        <td><input type="text" class="speed-tab"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <header>
+                        <p>senses</p>
+                    </header>
+                </section>
+                <section>
+                    <header>
+                        <p>attack workspace</p>
+                    </header>
+
+                </section>
+                <section>
+                    <header>
+                        <p>damage workspace</p>
+                    </header>
+                </section>
+                <section>
+                    <header>
+                        <p>basic attacks</p>
+                    </header>
+                    <div>
+                        <a href="#" data-toggle="popover" title="ATK" data-trigger="focus" data-content="STR + Weapon prof + 1d20">
+                            <button type="button" class="btn btn-default">Melee Basic</button>
+                        </a>
+
+                        <a href="#" data-toggle="popover" title="ATK" data-trigger="focus" data-content="DEX + Weapon prof + 1d20">
+                            <button type="button" class="btn btn-default">Ranged Basic</button>
+                        </a>
+                    </div>
+                </section>
+                <section>
+                    <header>
+                        <p>feats</p>
+                    </header>
+                </section>
+            </div>
+
+
         </div>
-    </div>
-    <script data-main="app" src="lib/require.js"></script>
+        <script data-main="app" src="lib/require.js"></script>
 </body>
 
 </html>

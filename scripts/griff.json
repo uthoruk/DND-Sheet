@@ -20,6 +20,25 @@
         "deity": "Kord",
         "company": null
     },
+    "class": {
+        "name": "Fighter",
+        "baseHP": 15,
+        "levelHP": 6,
+        "surgesDay": 9,
+        "defenseBonus": {
+            "for": 2
+        }
+    },
+    "race": {
+        "name": "Dragonborn",
+        "size": "Medium",
+        "speed": 6,
+        "languages": "Common, Draconic",
+        "skillBonus": {
+            "historyBonus": 2,
+            "intimidateBonus": 2
+        }
+    },
     "initiative": {
         "initBonus": 0
     },
@@ -33,14 +52,21 @@
     },
     "hitPoints": {
         "baseHP": 15,
-        "classHP": 6
+        "classHP": 6,
+        "currentHP": 0,
+        "temporaryHP": 0,
+        "currentHealingSurges": 0
+
     },
     "defenses": {
-        "acClassBonus": 0,
-        "acFeatBonus": 0,
-        "acEnhBonus": 0,
-        "acMiscAutoBonus": 0,
-        "acMiscBonus": 0
+        "acEnhancementBonus": 0,
+        "acMiscBonus": 0,
+        "fortitudeEnhancementBonus": 0,
+        "fortitudeMiscBonus": 0,
+        "reflexEnhancementBonus": 0,
+        "reflexMiscBonus": 0,
+        "willEnhancementBonus": 0,
+        "willMiscBonus": 0
     },
     "skills": {
         "acroSkillTrained": false,
@@ -77,5 +103,12 @@
         "streSkillMisc": 0,
         "thieSkillTrained": false,
         "thieSkillMisc": 0
+    },
+    "armor": {
+        "type": "H",
+        "acBonus": 8,
+        "enhBonus": 0,
+        "skillPenalty": -2,
+        "speedPenalty": -1
     }
 }
