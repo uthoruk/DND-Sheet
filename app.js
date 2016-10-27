@@ -5,7 +5,7 @@ requirejs({
     },
     paths: {
         app: "../scripts",
-        bootstrap: "//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min"
+        bootstrap: "//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min"
     }
 });
 

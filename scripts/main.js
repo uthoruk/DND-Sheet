@@ -1,6 +1,7 @@
 define([
     'jquery',
-    'vue'
+    'vue',
+    'bootstrap'
 ], function($, Vue) {
     'use strict';
 
