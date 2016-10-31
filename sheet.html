@@ -15,6 +15,7 @@
         <header id="sheet_header">
             <img src="http://cdn0.vox-cdn.com/assets/4510675/10258980_10152398165651071_9160598520303222803_o__1_.png">
             <player-name></player-name>
+            <button type="menu" id="btn_export">Export Character</button>
         </header>
 
         <section id="character_info">
@@ -569,18 +570,11 @@
                         <div class="speed-table">
                             <table>
                                 <thead>
-                                    <th>Base</span>
-                                    </th>
-                                    <th>armor</th>
-                                    <th>item</th>
                                     <th>misc</th>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><input type="text" class="speed-tab" disabled v-model="classSpeed"></td>
-                                        <td><input type="text" class="speed-tab" disabled></td>
-                                        <td><input type="text" class="speed-tab" disabled></td>
-                                        <td><input type="text" class="speed-tab"></td>
+                                        <td><input type="number" class="speed-tab" v-model="speedMiscBonus"></td>
                                     </tr>
                                 </tbody>
                             </table>

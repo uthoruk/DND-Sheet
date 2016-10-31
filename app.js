@@ -9,4 +9,7 @@ requirejs({
     }
 });
 
-requirejs(['app/main']);
+
+requirejs(['app/main'], function(main) {
+    main.init();
+});

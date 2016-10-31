@@ -110,5 +110,8 @@
         "enhBonus": 0,
         "skillPenalty": -2,
         "speedPenalty": -1
+    },
+    "movement": {
+        "speedMiscBonus": 0
     }
 }
