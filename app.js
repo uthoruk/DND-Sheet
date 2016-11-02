@@ -10,6 +10,4 @@ requirejs({
 });
 
 
-requirejs(['app/main'], function(main) {
-    main.init();
-});
+requirejs(['app/main']);
