@@ -14,8 +14,11 @@
 
         <header id="sheet_header">
             <img src="http://cdn0.vox-cdn.com/assets/4510675/10258980_10152398165651071_9160598520303222803_o__1_.png">
-            <player-name></player-name>
-            <button v-on:click="exportCharacter">Export Character</button>
+            <div>
+                <player-name></player-name>
+            </div>
+            <button v-on:click="exportCharacter" class="btn btn-danger">Export Character</button>
+            <button class="btn btn-success">Import Character</button>
         </header>
 
         <section id="character_info">
@@ -95,7 +98,7 @@
                     <button data-toggle="collapse" data-target="#initiative-content" class="header-button btn btn-block" type="button"><p>Initiative</p></button>
                 </header>
                 <div id="initiative-content" class="collapse in">
-                    <table class="table-condensed">
+                    <!--<table class="table-condensed">
                         <thead>
                             <th class="init-content">score</th>
                             <th class="init-content">misc</th>
@@ -103,7 +106,17 @@
                         <tr class="ini-tab">
                             <td><input type="text" class="init_input" v-model="initiative" disabled></td>
                             <td><input type="number" class="init_input" v-model="initBonus"></td>
-                    </table>
+                    </table>-->
+                    <div class="initiative-container-flex">
+                        <div>
+                            <label for="#initiative-score">SCORE</label>
+                            <input id="#initiative-score" type="text" class="init_input" v-model="initiative" disabled>
+                        </div>
+                        <div>
+                            <label for="#initiative-misc">MISC</label>
+                            <input id="initiative-misc" type="number" class="init_input" v-model="initBonus">
+                        </div>
+                    </div>
                 </div>
             </section>
 

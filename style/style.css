@@ -192,6 +192,11 @@ header input.player_name {
 
 /* initiative */
 
+.initiative-container-flex {
+    display: flex;
+    justify-content: space-around;
+}
+
 .main_score {
     font-weight: bold;
     font-size: 20px;
