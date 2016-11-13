@@ -1,0 +1,42 @@
+.header-banner {
+    height: 120px;
+    background-color: black;
+    width: 100%;
+    color: #ff3333;
+    text-align: center;
+    font-family: index-banner-font;
+    font-size: 4em;
+    text-transform: capitalize;
+    margin: 0px;
+    padding: 15px;
+}
+
+.index-module {
+    position: absolute;
+    height: 550px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+}
+
+.index-module-item {
+    margin: 20px;
+    opacity: 1;
+    z-index: 1;
+}
+
+.image-bg-class {
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    opacity: 0.5;
+    height: 550px;
+    width: 100%;
+}
+
+@font-face {
+    font-family: index-banner-font;
+    src: url('../fonts/CandyScript.ttf');
+}
