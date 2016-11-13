@@ -30,10 +30,31 @@
 .image-bg-class {
     background-image: url('../images/background.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     opacity: 0.5;
     height: 550px;
     width: 100%;
+}
+
+#file-select {
+    position: relative;
+    overflow: hidden;
+}
+
+#file-select input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
 }
 
 @font-face {
