@@ -50,6 +50,24 @@ table {
     width: 75%;
 }
 
+.ability-flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.ability-flex-container-sub {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.column-label-class {
+    color: black;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
 thead th {
     color: black;
     font-size: 12px;
@@ -98,6 +116,16 @@ header input.player_name {
 #sheet_body {
     margin: auto;
     width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.image-bg-class {
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+    height: 1024px;
 }
 
 .dark {
@@ -234,18 +262,17 @@ header input.player_name {
 }
 
 .abil_input {
-    width: 40px;
-    font-size: 20px;
     border: 1px solid black;
+    width: 40px;
 }
 
 .ability-tag {
     background-color: black;
-    font-size: 20px;
+    font-size: 1.5em;
     color: white;
-    width: 60px;
     text-transform: uppercase;
     font-weight: bold;
+    padding: 2px
 }
 
 

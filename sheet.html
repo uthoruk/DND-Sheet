@@ -13,7 +13,7 @@
     <div id="sheet_body">
 
         <header id="sheet_header">
-            <img src="http://cdn0.vox-cdn.com/assets/4510675/10258980_10152398165651071_9160598520303222803_o__1_.png">
+            <!-- <img src="http://cdn0.vox-cdn.com/assets/4510675/10258980_10152398165651071_9160598520303222803_o__1_.png"> -->
             <div>
                 <player-name></player-name>
             </div>
@@ -125,19 +125,19 @@
                     <button data-toggle="collapse" data-target="#ability-scores-content" class="header-button btn btn-block"><p>Ability Scores</p></button>
                 </header>
                 <div id="ability-scores-content" class="collapse in">
-                    <table class="table-condensed">
-                        <thead>
-                            <th>Score</th>
-                            <th>Ability</th>
-                            <th>Abil Mod</th>
-                            <th>Mod + 1/2 LVL</th>
-                        </thead>
-                        <tr>
-                            <td><input type="text" class="abil_input" v-model="strength"></td>
-                            <td class="ability-tag well">STR</td>
-                            <td><input type="text" class="abil_input" v-model="strMod" disabled></td>
-                            <td><input type="text" class="abil_input" v-model="strMod_lvl" disabled></td>
-                        </tr>
+                    <div class="ability-flex-container">
+                        <div class="ability-flex-container-sub">
+                            <span class="column-label-class">Score</span>
+                            <span class="column-label-class">Ability</span>
+                            <span class="column-label-class">Abil Mod</span>
+                            <span class="column-label-class">Mod + 1/2 LVL</span>
+                        </div>
+                        <div class="ability-flex-container-sub">
+                            <div><input type="text" class="abil_input" v-model="strength"></div>
+                            <div class="ability-tag , well">STR</div>
+                            <div><input type="text" class="abil_input" v-model="strMod" disabled></div>
+                            <div><input type="text" class="abil_input" v-model="strMod_lvl" disabled></div>
+                        </div>
                         <tr>
                             <td><input type="text" class="abil_input" v-model="constitution"></td>
                             <td class="ability-tag well">con</td>
@@ -168,7 +168,7 @@
                             <td><input type="text" class="abil_input" v-model="chaMod" disabled></td>
                             <td><input type="text" class="abil_input" v-model="chaMod_lvl" disabled></td>
                         </tr>
-                    </table>
+                    </div container>
                 </div>
             </section>
 
@@ -633,6 +633,7 @@
 
 
         </div>
+        <div class="image-bg-class"></div>
         <script data-main="app" src="lib/require.js"></script>
 </body>
 
