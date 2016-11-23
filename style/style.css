@@ -64,8 +64,9 @@ table {
 .column-label-class {
     color: black;
     font-size: 12px;
-    text-align: center;
     text-transform: uppercase;
+    position: relative;
+    left: 20px;
 }
 
 thead th {
