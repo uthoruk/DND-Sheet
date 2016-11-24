@@ -109,12 +109,12 @@
                             <td><input type="number" class="init_input" v-model="initBonus"></td>
                     </table>-->
                     <div class="initiative-container-flex">
-                        <div>
-                            <label for="#initiative-score">SCORE</label>
-                            <input id="#initiative-score" type="text" class="init_input" v-model="initiative" disabled>
+                        <div class="initiative-flex-item">
+                            <div class="column-label-class">SCORE</div>
+                            <div class="column-label-class">MISC</div>
                         </div>
-                        <div>
-                            <label for="#initiative-misc">MISC</label>
+                        <div class="initiative-flex-item">
+                            <input id="#initiative-score" type="text" class="init_input" v-model="initiative" disabled>
                             <input id="initiative-misc" type="number" class="init_input" v-model="initBonus">
                         </div>
                     </div>
@@ -134,37 +134,37 @@
                             <span class="column-label-class">Mod + 1/2 LVL</span>
                         </div>
                         <div class="ability-flex-container-sub">
-                            <div><input type="text" class="abil_input" v-model="strength"></div>
+                            <div><input type="text" class="abil_input , main_score" v-model="strength"></div>
                             <div class="ability-tag , well">STR</div>
                             <div><input type="text" class="abil_input" v-model="strMod" disabled></div>
                             <div><input type="text" class="abil_input" v-model="strMod_lvl" disabled></div>
                         </div>
                         <div class="ability-flex-container-sub">
-                            <div><input type="text" class="abil_input" v-model="constitution"></div>
+                            <div><input type="text" class="abil_input , main_score" v-model="constitution"></div>
                             <div class="ability-tag well">con</div>
                             <div><input type="text" class="abil_input" v-model="conMod" disabled></div>
                             <div><input type="text" class="abil_input" v-model="conMod_lvl" disabled></div>
                         </div>
                         <div class="ability-flex-container-sub">
-                            <div><input type="text" class="abil_input" v-model="dexterity"></div>
+                            <div><input type="text" class="abil_input , main_score" v-model="dexterity"></div>
                             <div class="ability-tag well">dex</div>
                             <div><input type="text" class="abil_input" v-model="dexMod" disabled></div>
                             <div><input type="text" class="abil_input" v-model="dexMod_lvl" disabled></div>
                         </div>
                         <div class="ability-flex-container-sub">
-                            <div><input type="text" class="abil_input" v-model="intelligence"></div>
+                            <div><input type="text" class="abil_input , main_score" v-model="intelligence"></div>
                             <div class="ability-tag well">int</div>
                             <div><input type="text" class="abil_input" v-model="intMod" disabled></div>
                             <div><input type="text" class="abil_input" v-model="intMod_lvl" disabled></div>
                         </div>
                         <div class="ability-flex-container-sub">
-                            <div><input type="text" class="abil_input" v-model="wisdom"></div>
+                            <div><input type="text" class="abil_input , main_score" v-model="wisdom"></div>
                             <div class="ability-tag well">wis</div>
                             <div><input type="text" class="abil_input" v-model="wisMod" disabled></div>
                             <div><input type="text" class="abil_input" v-model="wisMod_lvl" disabled></div>
                         </div>
                         <div class="ability-flex-container-sub">
-                            <div><input type="text" class="abil_input" v-model="charisma"></div>
+                            <div><input type="text" class="abil_input , main_score" v-model="charisma"></div>
                             <div class="ability-tag well">cha</div>
                             <div><input type="text" class="abil_input" v-model="chaMod" disabled></div>
                             <div><input type="text" class="abil_input" v-model="chaMod_lvl" disabled></div>

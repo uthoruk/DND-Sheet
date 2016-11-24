@@ -53,6 +53,7 @@ table {
 .ability-flex-container {
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 .ability-flex-container-sub {
@@ -65,8 +66,7 @@ table {
     color: black;
     font-size: 12px;
     text-transform: uppercase;
-    position: relative;
-    left: 20px;
+    width: 65px;
 }
 
 thead th {
@@ -223,32 +223,25 @@ header input.player_name {
 
 .initiative-container-flex {
     display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.initiative-flex-item {
+    display: flex;
     justify-content: space-around;
 }
 
 .main_score {
     font-weight: bold;
-    font-size: 20px;
-}
-
-.ini-tab {
-    color: black;
-    font-size: 12px;
-    text-align: center;
-    text-transform: uppercase;
+    font-size: 1.5em;
 }
 
 .init_input {
     height: 35px;
     font-size: 16px;
     width: 35px;
-    display: inline-block;
     border: 1px solid black;
-}
-
-.initiative-tab {
-    margin: auto;
-    width: 40%;
 }
 
 
@@ -273,7 +266,8 @@ header input.player_name {
     color: white;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 2px
+    padding: 2px;
+    width: 65px;
 }
 
 
