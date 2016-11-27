@@ -118,10 +118,11 @@ header input.player_name {
 
 .image-bg-class {
     background-image: url('../images/background.jpg');
-    background-repeat: no-repeat;
     background-size: cover;
+    background-repeat: repeat-y;
+    background-position-x: center;
+    height: 2048px;
     opacity: 0.5;
-    height: 1024px;
 }
 
 .dark b {
