@@ -358,8 +358,6 @@ header input.player_name {
     justify-content: space-around;
 }
 
-.defense-flex-item {}
-
 .input-def-auto {
     border: 1px solid black;
     width: 40px;
