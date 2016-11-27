@@ -113,5 +113,32 @@
     },
     "movement": {
         "speedMiscBonus": 0
+    },
+    "combat": {
+        "attacks": [{
+            "name": "Triple Porrazo",
+            "ability": "STR",
+            "versus": "AC",
+            "attackBonus": {
+                "abil": 4,
+                "level": 2,
+                "class": 0,
+                "prof": 3,
+                "feat": 0,
+                "enh": 3,
+                "misc": 0
+            },
+            "diceNumber": "3",
+            "diceType": "d12",
+            "damageBonus": {
+                "abil": 4,
+                "feat": 0,
+                "enh": 3,
+                "misc": 0
+            },
+            "type": "basic",
+            "cssColor": "success",
+            "notes": "Hits first target for full damage and second target for STR mod damage."
+        }]
     }
 }

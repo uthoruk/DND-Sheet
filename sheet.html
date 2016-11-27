@@ -602,7 +602,39 @@
                 </section>
                 <section>
                     <header>
-                        <p>attack workspace</p>
+                        <div id="attacks-content" class="collapse in">
+                            <div id="attack-workspace">
+                                <ul class="list-group" id="attack-list">
+                                    <div v-for="(attack, index) in attacks" type="button" :class="'btn btn-' + attack.cssColor + ' btn-block'" data-toggle="modal" v-bind:data-target="'#power-modal' + index">
+                                        <li>{{attack.name}}</li>
+                                    </div>
+                                    <div v-for="(attack, index) in attacks" :id="'#power-modal' + index" class="modal fade" role="dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">
+                                                    {{attack.name}}
+                                                </h4>
+                                            </div>
+
+                                            <div class="modal-body">
+                                                <p>Attack</p>
+                                                <attack-bonus :attack="attack"></attack-bonus>
+
+                                                <div class="form-group">
+                                                    <label for="notes" class="label-style">Effect/Notes</label>
+                                                    <input class="form-control" rows="4" id="notes" v-bind:value="attack.notes" disabled>
+                                                </div>
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default">Delete</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
                     </header>
 
                 </section>

@@ -18,16 +18,16 @@ define([
 
             var self = this;
 
-            if (!localStorage.getItem("my-character")) {
-                $.getJSON(
-                    "scripts/griff.json",
-                    function(data) {
-                        self.loadCharacter(data);
-                    });
-            } else {
-                var character = JSON.parse(localStorage.getItem("my-character"));
-                this.loadCharacter(character);
-            }
+            // if (!localStorage.getItem("my-character")) {
+            $.getJSON(
+                "scripts/griff.json",
+                function(data) {
+                    self.loadCharacter(data);
+                });
+            //  } else {
+            //    var character = JSON.parse(localStorage.getItem("my-character"));
+            //  this.loadCharacter(character);
+            // }
         },
 
         loadCharacter: function(character) {
@@ -232,7 +232,28 @@ define([
                 }
             });
 
-            localStorage.setItem("my-character", JSON.stringify(character));
+            Vue.component('attack-bonus', {
+                props: ['attack'],
+                template: '<div class="well well-sm atk-inline">' +
+                    '<input type="text" class="atk-inp-modal" v-model="{{totalAttackBonus}}" disabled>' +
+                    '</div>' +
+                    '<div class="well well-sm atk-inline">VS</div>' +
+                    '<div class="well well-sm atk-inline">' +
+                    '<input type="text" class="atk-inp-modal" v-model="{{attack.versus}}" disabled>' +
+                    '</div>',
+                computed: {
+                    totalAttackBonus: function() {
+                        return Object.keys(attack.attackBonus).reduce(function(previous, key) { return previous + attack.attackBonus[key]; }, 0);
+                    }
+                }
+            });
+
+            var attacks = new Vue({
+                el: "#attack-workspace",
+                data: character.combat,
+            });
+
+            //localStorage.setItem("my-character", JSON.stringify(character));
         }
     }
 
