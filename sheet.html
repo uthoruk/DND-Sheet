@@ -568,23 +568,18 @@
 
                 <section id="movement">
                     <header>
-                        <p>Movement</p>
+                        <button data-toggle="collapse" data-target="#movement-content" class="header-button btn btn-block"><p>Movement</p></button>
                     </header>
-                    <div>
-                        <input type="text" class="speed" disabled v-model="speed">
-                        <div class="speed-tag">Speed</div>
-
-                        <div class="speed-table">
-                            <table>
-                                <thead>
-                                    <th>misc</th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><input type="number" class="speed-tab" v-model="speedMiscBonus"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    <div id="movement-content">
+                        <div class="movement-flex-container">
+                            <div class="movement-flex-container-score">
+                                <div class="movement-flex-item"><input type="text" class="speed" disabled v-model="speed"></div>
+                                <div class="speed-tag , movement-flex-item">Speed</div>
+                            </div>
+                            <div class="movement-flex-container-bonus">
+                                <div class="movement-flex-item , column-label-class">misc</div>
+                                <div class="movement-flex-item"><input type="number" class="speed-tab" v-model="speedMiscBonus"></div>
+                            </div>
                         </div>
                     </div>
                 </section>
