@@ -129,17 +129,8 @@ header input.player_name {
     height: 1024px;
 }
 
-.dark {
-    background-color: #333;
-    color: #FFF;
-}
-
 .dark b {
     font-weight: bolder;
-}
-
-.fill_text {
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 #sheet_header {
@@ -187,15 +178,6 @@ header input.player_name {
 
 #character_info input {
     display: inline-block;
-}
-
-.info_field {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-.info_field input {
-    width: 100%;
 }
 
 #name {
@@ -246,14 +228,6 @@ header input.player_name {
 
 
 /* abilities */
-
-.abil-content {
-    background-color: white;
-    color: black;
-    text-transform: uppercase;
-    text-align: center;
-    width: 90%;
-}
 
 .abil_input {
     border: 1px solid black;
@@ -347,12 +321,6 @@ header input.player_name {
     padding: 3px;
 }
 
-.skill-ability {
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: center;
-}
-
 .trnd {
     height: 20px;
     text-align: center;
@@ -368,17 +336,41 @@ header input.player_name {
 
 /* defenses */
 
+.defenses-flex-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.defenses-flex-container-score {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.defenses-flex-container-bonus {
+    display: flex;
+    flex-direction: column;
+}
+
+.defenses-flex-container-bonus-sub {
+    display: flex;
+    justify-content: space-around;
+}
+
+.defense-flex-item {}
+
+.input-def-auto {
+    border: 1px solid black;
+    width: 40px;
+}
+
 .defense-total,
 .defense-table,
 .speed-total,
 .speed-table {
     display: inline-block;
     vertical-align: bottom;
-}
-
-.defense-table,
-speed-table {
-    width: auto;
 }
 
 .def-row {
@@ -395,8 +387,6 @@ speed-table {
     font-size: 20px;
     border: 2px solid black;
     background-color: white;
-    display: inline-block;
-    vertical-align: middle;
 }
 
 .input-auto {
@@ -407,29 +397,17 @@ speed-table {
     border: 1px solid black;
 }
 
-.def-for {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.def-ref {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.def-wil {
-    display: inline-block;
-    vertical-align: middle;
-}
-
 .def-tag {
     background-color: black;
+    font-size: 1.5em;
     color: white;
+    text-transform: uppercase;
     font-weight: bold;
-    font-size: 25px;
-    z-index: -1;
-    display: inline-block;
-    vertical-align: middle;
+    width: 65px;
+    height: 35px;
+    border-radius: 7%;
+    border: 1px solid white;
+    padding: 5px;
 }
 
 

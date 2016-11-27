@@ -471,44 +471,41 @@
                         <button data-toggle="collapse" data-target="#defenses-content" class="header-button btn btn-block"><p>Defenses</p></button>
                     </header>
                     <div id="defenses-content" class="collapse in table-responsive">
-                        <div class="def-ac def-row">
+                        <div class="defenses-flex-container">
 
-                            <div class="defense-total">
-                                <input type="text" class="def-input , main_score" v-model="characterAC" disabled>
-                                <div class="def-tag , well-sm" data-toggle="popover" data-trigger="hover" title="Based on" data-content="1/2 Lv + Armor/Ability + Class + Feat + Enh + Misc">AC</div>
+                            <div class="defenses-flex-container-score">
+                                <div class=""><input type="text" class="def-input , main_score" v-model="characterAC" disabled></div>
+                                <div class="def-tag , defense-flex-item" data-toggle="popover" data-trigger="hover" title="Based on" data-content="1/2 Lv + Armor/Ability + Class + Feat + Enh + Misc">AC</div>
                             </div>
 
-                            <table class="table-condensed defense-table">
-                                <thead>
-                                    <th>enh</th>
-                                    <th>misc</th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><input type="number" class="input-def-auto" v-model="acEnhancementBonus"></td>
-                                        <td><input type="number" class="input-def-auto" v-model="acMiscBonus"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="defenses-flex-container-bonus">
+                                <div class="defenses-flex-container-bonus-sub">
+                                    <div class="defense-flex-item , column-label-class">enh</div>
+                                    <div class="defense-flex-item , column-label-class">misc</div>
+                                </div>
+                                <div class="defenses-flex-container-bonus-sub">
+                                    <div class="defense-flex-item"><input type="number" class="input-def-auto" v-model="acEnhancementBonus"></div>
+                                    <div class="defense-flex-item"><input type="number" class="input-def-auto" v-model="acMiscBonus"></div>
+                                </div>
+                            </div>
+
                         </div>
 
-                        <div class="def-for , def-row">
-                            <div class="defense-total">
-                                <input type="text" class="def-input main_score" v-model="characterFortitude" disabled>
-                                <div class="def-tag well-sm" data-toggle="popover" data-trigger="hover" title="Based on" data-content="1/2 Lv + Abil + Class + Feat + Enh + Misc">FOR</div>
+                        <div class="defenses-flex-container">
+                            <div class="defenses-flex-container-score">
+                                <div class="defense-flex-item"><input type="text" class="def-input main_score" v-model="characterFortitude" disabled></div>
+                                <div class="def-tag ,  defense-flex-item" data-toggle="popover" data-trigger="hover" title="Based on" data-content="1/2 Lv + Abil + Class + Feat + Enh + Misc">FOR</div>
                             </div>
-                            <table class="table-condensed defense-table">
-                                <thead>
-                                    <th>enh</th>
-                                    <th>misc</th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><input type="number" class="input-def-auto" v-model="fortitudeEnhancementBonus"></td>
-                                        <td><input type="number" class="input-def-auto" v-model="fortitudeMiscBonus"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="defenses-flex-container-bonus">
+                                <div class="defenses-flex-container-bonus-sub">
+                                    <div class="defense-flex-item , column-label-class">enh</div>
+                                    <div class="defense-flex-item , column-label-class">misc</div>
+                                </div>
+                                <div class="defenses-flex-container-bonus-sub">
+                                    <div class="defense-flex-item"><input type="number" class="input-def-auto" v-model="fortitudeEnhancementBonus"></div>
+                                    <div class="defense-flex-item"><input type="number" class="input-def-auto" v-model="fortitudeMiscBonus"></div>
+                                </div>
+                            </div>
                         </div>
                         <div class="def-ref def-row">
                             <div class="defense-total">
