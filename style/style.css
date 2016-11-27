@@ -45,11 +45,6 @@ label {
     font-size: 10px;
 }
 
-table {
-    margin: auto;
-    width: 75%;
-}
-
 .ability-flex-container {
     display: flex;
     flex-direction: column;
@@ -123,10 +118,11 @@ header input.player_name {
 
 .image-bg-class {
     background-image: url('../images/background.jpg');
-    background-repeat: no-repeat;
     background-size: cover;
+    background-repeat: repeat-y;
+    background-position-x: center;
+    height: 2048px;
     opacity: 0.5;
-    height: 1024px;
 }
 
 .dark b {
@@ -358,17 +354,13 @@ header input.player_name {
     justify-content: space-around;
 }
 
-.defense-flex-item {}
-
 .input-def-auto {
     border: 1px solid black;
     width: 40px;
 }
 
 .defense-total,
-.defense-table,
-.speed-total,
-.speed-table {
+.speed-total {
     display: inline-block;
     vertical-align: bottom;
 }
@@ -421,17 +413,32 @@ header input.player_name {
 
 /*speed*/
 
-.speed-tag {
-    background-color: black;
-    color: white;
-    font-weight: bold;
-    font-size: 25px;
-    z-index: -1;
-    display: inline-block;
+.movement-flex-container {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
 }
 
-.speed-table {
-    width: auto;
+.movement-flex-container-score {
+    display: flex;
+    justify-content: space-around;
+}
+
+.movement-flex-item {
+    align-self: center;
+}
+
+.speed-tag {
+    background-color: black;
+    font-size: 1.5em;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 100px;
+    height: 35px;
+    border-radius: 7%;
+    border: 1px solid white;
+    padding: 5px;
 }
 
 .speed {
@@ -441,28 +448,19 @@ header input.player_name {
     font-weight: bold;
     font-size: 20px;
     border: 2px solid black;
+    border-radius: 100%;
     background-color: white;
 }
 
 .speed-tab {
-    height: 30px;
-    text-align: center;
-    width: 40px;
-    font-size: 16px;
     border: 1px solid black;
+    width: 40px;
 }
 
 .movement {
     display: inline-block;
     width: 100%;
     text-align: center;
-}
-
-
-/*-*-*-*--*-*-*-*-*-*-*-*/
-
-.table-class {
-    display: inline-block;
 }
 
 

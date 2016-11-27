@@ -507,41 +507,37 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="def-ref def-row">
-                            <div class="defense-total">
-                                <input type="text" class="def-input main_score" v-model="characterReflex" disabled>
-                                <div class="def-tag well-sm" data-toggle="popover" data-trigger="hover" title="Based on" data-content="1/2 Lv + Abil + Class + Feat + Enh + Misc">REF</div>
+                        <div class="defenses-flex-container">
+                            <div class="defenses-flex-container-score">
+                                <div class="defense-flex-item"><input type="text" class="def-input main_score" v-model="characterReflex" disabled></div>
+                                <div class="def-tag , defense-flex-item" data-toggle="popover" data-trigger="hover" title="Based on" data-content="1/2 Lv + Abil + Class + Feat + Enh + Misc">REF</div>
                             </div>
-                            <table class="table-condensed defense-table">
-                                <thead>
-                                    <th>enh</th>
-                                    <th>misc</th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><input type="number" class="input-def-auto" v-model="reflexEnhancementBonus"></td>
-                                        <td><input type="number" class="input-def-auto" v-model="reflexMiscBonus"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="defenses-flex-container-bonus">
+                                <div class="defenses-flex-container-bonus-sub">
+                                    <div class="defense-flex-item , column-label-class">enh</div>
+                                    <div class="defense-flex-item , column-label-class">misc</div>
+                                </div>
+                                <div class="defenses-flex-container-bonus-sub">
+                                    <div class="defense-flex-item"><input type="number" class="input-def-auto" v-model="reflexEnhancementBonus"></div>
+                                    <div class="defense-flex-item"><input type="number" class="input-def-auto" v-model="reflexMiscBonus"></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="def-wil def-row">
-                            <div class="defense-total">
-                                <input type="text" class="def-input main_score" v-model="characterWill" disabled>
-                                <div class="def-tag well-sm" data-toggle="popover" data-trigger="hover" title="Based on" data-content="1/2 Lv + Abil + Class + Feat + Enh + Misc">WIL</div>
+                        <div class="defenses-flex-container">
+                            <div class="defenses-flex-container-score">
+                                <div class="defense-flex-item"><input type="text" class="def-input main_score" v-model="characterWill" disabled></div>
+                                <div class="def-tag , defense-flex-item" data-toggle="popover" data-trigger="hover" title="Based on" data-content="1/2 Lv + Abil + Class + Feat + Enh + Misc">WIL</div>
                             </div>
-                            <table class="table-condensed defense-table">
-                                <thead>
-                                    <th>enh</th>
-                                    <th>misc</th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><input type="number" class="input-def-auto" v-model="willEnhancementBonus"></td>
-                                        <td><input type="number" class="input-def-auto" v-model="willMiscBonus"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="defenses-flex-container-bonus">
+                                <div class="defenses-flex-container-bonus-sub">
+                                    <div class="defense-flex-item , column-label-class">enh</div>
+                                    <div class="defense-flex-item , column-label-class">misc</div>
+                                </div>
+                                <div class="defenses-flex-container-bonus-sub">
+                                    <div class="defense-flex-item"><input type="number" class="input-def-auto" v-model="willEnhancementBonus"></div>
+                                    <div class="defense-flex-item"><input type="number" class="input-def-auto" v-model="willMiscBonus"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -572,23 +568,18 @@
 
                 <section id="movement">
                     <header>
-                        <p>Movement</p>
+                        <button data-toggle="collapse" data-target="#movement-content" class="header-button btn btn-block"><p>Movement</p></button>
                     </header>
-                    <div>
-                        <input type="text" class="speed" disabled v-model="speed">
-                        <div class="speed-tag">Speed</div>
-
-                        <div class="speed-table">
-                            <table>
-                                <thead>
-                                    <th>misc</th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><input type="number" class="speed-tab" v-model="speedMiscBonus"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    <div id="movement-content">
+                        <div class="movement-flex-container">
+                            <div class="movement-flex-container-score">
+                                <div class="movement-flex-item"><input type="text" class="speed" disabled v-model="speed"></div>
+                                <div class="speed-tag , movement-flex-item">Speed</div>
+                            </div>
+                            <div class="movement-flex-container-bonus">
+                                <div class="movement-flex-item , column-label-class">misc</div>
+                                <div class="movement-flex-item"><input type="number" class="speed-tab" v-model="speedMiscBonus"></div>
+                            </div>
                         </div>
                     </div>
                 </section>
