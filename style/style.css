@@ -316,16 +316,35 @@ header input.player_name {
 
 /* skills */
 
-span {
-    display: block;
+.skills-flex-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.skills-flex-container-sub {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.skills-flex-item {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
 }
 
 .skill-name {
-    height: 20px;
+    height: 24px;
     text-align: center;
     text-transform: capitalize;
     font-weight: bold;
-    background-color: #D3D3D3;
+    background-color: black;
+    color: white;
+    width: 150px;
+    border: 1px solid white;
+    border-radius: 7px;
+    padding: 3px;
 }
 
 .skill-ability {
@@ -531,18 +550,3 @@ a:active {
 
 
 /*-*-*-*-*-*-*@media-*-*-*-*/
-
-@media only screen and (max-device-width: 480px) {
-    .no-show-480px {
-        display: none;
-    }
-    .width-480px {
-        width: 60%;
-    }
-    .skill-input {
-        width: 40%;
-    }
-    .section-tag {
-        display: none;
-    }
-}

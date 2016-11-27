@@ -114,7 +114,7 @@
                             <div class="column-label-class">MISC</div>
                         </div>
                         <div class="initiative-flex-item">
-                            <input id="#initiative-score" type="text" class="init_input" v-model="initiative" disabled>
+                            <input id="#initiative-score" type="text" class="init_input , main_score" v-model="initiative" disabled>
                             <input id="initiative-misc" type="number" class="init_input" v-model="initBonus">
                         </div>
                     </div>
@@ -205,258 +205,258 @@
                     <button data-toggle="collapse" data-target="#skills-content" class="header-button btn btn-block"><p>Skills</p></button>
                 </header>
                 <div id="skills-content" class="collapse in table-responsive">
-                    <table class="table-condensed">
-                        <thead>
-                            <th data-toggle="popover" data-trigger="hover" title="Based on" data-content="1/2 Lv + Abil Mod + Trnd + Armor Penalty + Misc">bonus</th>
-                            <th>skill name</th>
-                            <th>trnd<span>(+5)</span></th>
-                            <th>misc</th>
-                        </thead>
-                        <tr>
-                            <td class="bonus-480px">
+                    <div class="skills-flex-container">
+                        <div class="skills-flex-container-sub">
+                            <div class="skills-flex-item , column-label-class" data-toggle="popover" data-trigger="hover" title="Based on" data-content="1/2 Lv + Abil Mod + Trnd + Armor Penalty + Misc">bonus</div>
+                            <div class="skills-flex-item" style="width: 150px; text-transform: uppercase; color: black; font-size: 12px;">skill name</div>
+                            <div class="skills-flex-item , column-label-class">trnd (+5)</div>
+                            <div class="skills-flex-item , column-label-class">misc</div>
+                        </div>
+                        <div class="skills-flex-container-sub">
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="text" class="skill-input" disabled v-model="acroSkill"></div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-name">Acrobatics</div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="acroSkillTrained"></div>
-                            </td>
+                            </div>
 
-                            <td class="bonus-480px">
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="number" class="skill-input" v-model="acroSkillMisc"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bonus-480px">
+                            </div>
+                        </div>
+                        <div class="skills-flex-container-sub">
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="text" class="skill-input" disabled v-model="arcaSkill"></div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-name">Arcana</div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="arcaSkillTrained"></div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="number" class="skill-input" v-model="arcaSkillMisc"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bonus-480px">
+                            </div>
+                        </div>
+                        <div class="skills-flex-container-sub">
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="athlSkill"></div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-name">Athletics</div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="athlSkillTrained"></div>
-                            </td>
-                            <td class="bonus-480px">
+                            </div>
+                            <div class="skills-flex-item" class="bonus-480px">
                                 <div class="skill-input-auto"><input type="number" class="skill-input" v-model="athlSkillMisc"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bonus-480px">
+                            </div>
+                        </div>
+                        <div class="skills-flex-container-sub">
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="blufSkill"></div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-name">Bluff</div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="blufSkillTrained"></div>
-                            </td>
-                            <td class="bonus-480px">
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="number" class="skill-input" v-model="blufSkillMisc"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bonus-480px">
+                            </div>
+                        </div>
+                        <div class="skills-flex-container-sub">
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="diplSkill"></div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-name">Diplomacy</div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="diplSkillTrained"></div>
-                            </td>
-                            <td class="bonus-480px">
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="number" class="skill-input" v-model="diplSkillMisc"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bonus-480px">
+                            </div>
+                        </div>
+                        <div class="skills-flex-container-sub">
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="dungSkill"></div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-name">Dungeoneering</div>
-                            </td>
+                            </div>
 
-                            <td>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="dungSkillTrained"></div>
-                            </td>
+                            </div>
 
-                            <td class="bonus-480px">
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="number" class="skill-input" v-model="dungSkillMisc"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bonus-480px">
+                            </div>
+                        </div>
+                        <div class="skills-flex-container-sub">
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="enduSkill"></div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-name">Endurance</div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="enduSkillTrained"></div>
-                            </td>
-                            <td class="bonus-480px">
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="number" class="skill-input" v-model="enduSkillMisc"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bonus-480px">
+                            </div>
+                        </div>
+                        <div class="skills-flex-container-sub">
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="healSkill"></div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-name">Heal</div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="healSkillTrained"></div>
-                            </td>
-                            <td class="bonus-480px">
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="number" class="skill-input" v-model="healSkillMisc"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bonus-480px">
+                            </div>
+                        </div>
+                        <div class="skills-flex-container-sub">
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="histSkill"></div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-name">history</div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="histSkillTrained"></div>
-                            </td>
-                            <td class="bonus-480px">
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="number" class="skill-input" v-model="histSkillMisc"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bonus-480px">
+                            </div>
+                        </div>
+                        <div class="skills-flex-container-sub">
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="insiSkill"></div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-name">insight</div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="insiSkillTrained"></div>
-                            </td>
-                            <td class="bonus-480px">
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="number" class="skill-input" v-model="insiSkillMisc"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bonus-480px">
+                            </div>
+                        </div>
+                        <div class="skills-flex-container-sub">
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="intiSkill"></div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-name">intimidate</div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="intiSkillTrained"></div>
-                            </td>
-                            <td class="bonus-480px">
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="number" class="skill-input" v-model="intiSkillMisc"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bonus-480px">
+                            </div>
+                        </div>
+                        <div class="skills-flex-container-sub">
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="natuSkill"></div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-name">nature</div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="natuSkillTrained"></div>
-                            </td>
-                            <td class="bonus-480px">
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="number" class="skill-input" v-model="natuSkillMisc"></div>
-                            </td>
-                        </tr>
+                            </div>
+                        </div>
 
-                        <tr>
-                            <td class="bonus-480px">
+                        <div class="skills-flex-container-sub">
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="percSkill"></div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-name">perception</div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="percSkillTrained"></div>
-                            </td>
-                            <td class="bonus-480px">
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="number" class="skill-input" v-model="percSkillMisc"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bonus-480px">
+                            </div>
+                        </div>
+                        <div class="skills-flex-container-sub">
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="reliSkill"></div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-name">religion</div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="reliSkillTrained"></div>
-                            </td>
-                            <td class="bonus-480px">
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="number" class="skill-input" v-model="reliSkillMisc"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bonus-480px">
+                            </div>
+                        </div>
+                        <div class="skills-flex-container-sub">
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="steaSkill"></div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-name">Stealth</div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="steaSkillTrained"></div>
-                            </td>
+                            </div>
 
-                            <td class="bonus-480px">
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="number" class="skill-input" v-model="steaSkillMisc"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bonus-480px">
+                            </div>
+                        </div>
+                        <div class="skills-flex-container-sub">
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="streSkill"></div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-name">streetwise</div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="streSkillTrained"></div>
-                            </td>
+                            </div>
 
-                            <td class="bonus-480px">
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="number" class="skill-input" v-model="streSkillMisc"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bonus-480px">
+                            </div>
+                        </div>
+                        <div class="skills-flex-container-sub">
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="text" class="skill-input" disabled disabled v-model="thieSkill"></div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-name">thievery</div>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="checkbox" class="skill-input" v-model="thieSkillTrained"></div>
-                            </td>
-                            <td class="bonus-480px">
+                            </div>
+                            <div class="skills-flex-item">
                                 <div class="skill-input-auto"><input type="number" class="skill-input" v-model="thieSkillMisc"></div>
-                            </td>
-                        </tr>
-                    </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -474,8 +474,8 @@
                         <div class="def-ac def-row">
 
                             <div class="defense-total">
-                                <input type="text" class="def-input main_score" v-model="characterAC" disabled>
-                                <div class="def-tag well-sm" data-toggle="popover" data-trigger="hover" title="Based on" data-content="1/2 Lv + Armor/Ability + Class + Feat + Enh + Misc">AC</div>
+                                <input type="text" class="def-input , main_score" v-model="characterAC" disabled>
+                                <div class="def-tag , well-sm" data-toggle="popover" data-trigger="hover" title="Based on" data-content="1/2 Lv + Armor/Ability + Class + Feat + Enh + Misc">AC</div>
                             </div>
 
                             <table class="table-condensed defense-table">
@@ -492,7 +492,7 @@
                             </table>
                         </div>
 
-                        <div class="def-for def-row">
+                        <div class="def-for , def-row">
                             <div class="defense-total">
                                 <input type="text" class="def-input main_score" v-model="characterFortitude" disabled>
                                 <div class="def-tag well-sm" data-toggle="popover" data-trigger="hover" title="Based on" data-content="1/2 Lv + Abil + Class + Feat + Enh + Misc">FOR</div>
